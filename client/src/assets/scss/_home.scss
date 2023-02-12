@@ -1,0 +1,71 @@
+.home-wrapper {
+
+    .list-item {
+        display: flex;
+        flex-wrap: wrap;
+
+        .item-card {
+            flex: 25%;
+            max-width: 25%;
+
+            .item {
+                margin: 16px;
+                border: 1px solid #dedede;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+
+                .title {
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    margin: 6px 16px;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                }
+
+                &:hover .coating {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(0, 0, 0, .6);
+                }
+            }
+
+            .img {
+                position: relative;
+
+                .coating {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+
+                    .feature {
+                        width: 80%;
+                        padding: 8px 16px;
+                        margin: 6px;
+                        border: 1px solid wheat;
+                        text-align: center;
+
+                        a {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            color: wheat;
+                            text-decoration: none;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

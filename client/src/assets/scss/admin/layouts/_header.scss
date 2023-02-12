@@ -1,0 +1,102 @@
+.admin-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0px 2px 20px rgb(1 41 112 / 10%);
+    z-index: 1;
+
+    .logo-header {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 26px;
+            height: auto;
+        }
+
+        div {
+            margin-left: 8px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #012970;
+        }
+    }
+
+    .user {
+        position: relative;
+
+        .user-header {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+
+            div {
+                font-size: 18px;
+                font-weight: 600;
+                color: #012970;
+                margin-left: 8px;
+            }
+
+            img {
+                width: 36px;
+                height: auto;
+                border-radius: 50%;
+            }
+
+            i {
+                margin-left: 4px;
+            }
+        }
+
+        .user-action {
+            position: absolute;
+            right: 0;
+            top: 120%;
+            width: 100%;
+            background: #fff;
+            border: 2px solid #eaedf1;
+
+            &::after {
+                content: "";
+                width: 13px;
+                height: 13px;
+                background: #fff;
+                position: absolute;
+                top: -7px;
+                right: 20px;
+                transform: rotate(45deg);
+                border-top: 2px solid #eaedf1;
+                border-left: 2px solid #eaedf1;
+            }
+
+            .name {
+                text-align: center;
+                margin: 12px 0;
+                font-weight: bold;
+                color: #444444;
+            }
+
+            .item {
+                padding: 8px 8px;
+                border-top: 1px solid #777;
+
+                i {
+                    margin-right: 8px;
+                }
+
+                &:hover {
+                    background: #f6f9ff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

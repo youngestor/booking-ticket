@@ -1,0 +1,33 @@
+.footer {
+    padding: 20px 0;
+    border-top: 1px solid #cdc197;
+
+    &-container {
+        background: white;
+        width: 1000px;
+        margin: 0 auto;
+        font-size: 12px;
+
+        .footer-link {
+            display: flex;
+            margin-top: 16px;
+
+            div:nth-child(2) {
+                padding: 0 16px;
+                margin: 0 16px;
+                border-left: 1px solid #cdc197;
+                border-right: 1px solid #cdc197;
+            }
+        }
+
+        .company-info {
+            color: #666;
+            line-height: 18px;
+            margin: 4px 0;
+        }
+
+        .coppy {
+            color: #777;
+        }
+    }
+}

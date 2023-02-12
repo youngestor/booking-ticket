@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Nunito", sans-serif;
+}
+
+@import "./layouts/header";
+@import "./layouts/footer";
+@import "./layouts/app";
+@import "./home";
+
+@import "./admin/layouts/header";
+@import "./admin/layouts/sidebar";
+@import "./admin/layouts/admin";
+@import "./admin/home";
+@import "./admin/createMovies";
+
+@import "./error";
