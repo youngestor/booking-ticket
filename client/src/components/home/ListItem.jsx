@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { URL } from '../../utils'
-import axios from 'axios'
+import { apiMovieRead } from '../../services'
 
 function ListItem() {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
-        axios.get(`${URL.SERVER}/api/movie/read`)
-            .then(res => {
-                setMovies(res.data.movie)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        fetchData()
     }, [])
+
+    const fetchData = async () => {
+        let res = await apiMovieRead()
+        setMovies(res.data.movie)
+    }
 
     return (
         <div className="list-item">

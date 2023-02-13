@@ -27,11 +27,10 @@ export default function Header() {
                 <img src={logoHeader} alt='' />
             </div>
             <div className='header-main'>
-                <div className='item'>Shop quà tặng</div>
-                <div className='item'>Mua vé</div>
+                <div className='item'>Trang chủ</div>
                 <div className='item'>Phim</div>
-                <div className='item'>Rạp chiếu phim</div>
-                <div className='item'>Khuyến mãi</div>
+                <div className='item'>Giới thiệu</div>
+                <div className='item'>Liên hệ</div>
             </div>
         </div>
     )

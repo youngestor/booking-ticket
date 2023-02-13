@@ -13,6 +13,10 @@
     .link {
         color: #093074;
         text-decoration: none;
+
+        &.active {
+            color: #4154f1;
+        }
     }
 
     .item {

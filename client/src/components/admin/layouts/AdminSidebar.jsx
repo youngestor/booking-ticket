@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { path } from '../../../utils'
 
 function AdminSidebar() {
@@ -7,14 +7,14 @@ function AdminSidebar() {
 
     return (
         <div className='admin-sidebar'>
-            <Link className="link" to={path.ADMIN}>
+            <NavLink className="link" to={path.ADMIN}>
                 <div className="item">
                     <div>
                         <i className="fa-solid fa-grip"></i>
                         Dashboard
                     </div>
                 </div>
-            </Link>
+            </NavLink>
             <div onClick={() => {
                 subItem === 1 ? setSubItem(0) : setSubItem(1)
             }} className="item">
@@ -26,18 +26,18 @@ function AdminSidebar() {
             </div>
             {subItem === 1 &&
                 <div className="sub-item">
-                    <Link className="link" to={path.CREATE_ACCOUNT}>
+                    <NavLink className="link" to={path.CREATE_ACCOUNT}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Tạo tài khoản
                         </div>
-                    </Link>
-                    <Link className="link" to={path.READ_ACCOUNT}>
+                    </NavLink>
+                    <NavLink className="link" to={path.READ_ACCOUNT}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Danh sách tài khoản
                         </div>
-                    </Link>
+                    </NavLink>
                 </div>
             }
             <div onClick={() => {
@@ -51,18 +51,18 @@ function AdminSidebar() {
             </div>
             {subItem === 2 &&
                 <div className="sub-item">
-                    <Link className="link" to={path.CREATE_MOVIE}>
+                    <NavLink className="link" to={path.CREATE_MOVIE}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Thêm phim mới
                         </div>
-                    </Link>
-                    <Link className="link" to={path.READ_MOVIE}>
+                    </NavLink>
+                    <NavLink className="link" to={path.READ_MOVIE}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Danh sách phim
                         </div>
-                    </Link>
+                    </NavLink>
                 </div>
             }
         </div>

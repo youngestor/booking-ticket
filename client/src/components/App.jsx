@@ -8,7 +8,8 @@ import Home from './home'
 
 import AdminLayouts from './admin/layouts'
 import AdminHome from './admin/home'
-import AdminCreateMovies from './admin/createMovies'
+import AdminMovieCreate from './admin/movieCreate'
+import AdminMovieRead from './admin/movieRead'
 
 import Error from './error'
 
@@ -28,7 +29,8 @@ export default function App() {
                 <AdminLayouts>
                     <Routes>
                         <Route path={path.HOME} element={<AdminHome />} />
-                        <Route path={path.CREATE_MOVIE} element={<AdminCreateMovies />} />
+                        <Route path={path.CREATE_MOVIE} element={<AdminMovieCreate />} />
+                        <Route path={path.READ_MOVIE} element={<AdminMovieRead />} />
                         <Route path={path.ALL} element={<Error />} />
                     </Routes>
                 </AdminLayouts>
