@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { URL } from '../../../utils'
+import { Link } from 'react-router-dom'
+import { URL, path } from '../../../utils'
 import { apiMovieRead, apiMovieDelete } from '../../../services'
 
 function MovieRead() {
@@ -34,7 +35,9 @@ function MovieRead() {
                                 {item.title}
                             </div>
                             <div className='feature'>
-                                <i className="fa-solid fa-pen"></i>
+                                <Link to={`${path.ADMIN}/${path.UPDATE_MOVIE}`} state={item}>
+                                    <i className="fa-solid fa-pen"></i>
+                                </Link>
                                 <i onClick={() => deleteMovie(item._id)} className="fa-solid fa-trash"></i>
                             </div>
                         </div>)

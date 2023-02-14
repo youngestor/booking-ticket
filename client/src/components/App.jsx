@@ -10,6 +10,7 @@ import AdminLayouts from './admin/layouts'
 import AdminHome from './admin/home'
 import AdminMovieCreate from './admin/movieCreate'
 import AdminMovieRead from './admin/movieRead'
+import AdminMovieUpdate from './admin/movieUpdate'
 
 import Error from './error'
 
@@ -31,6 +32,7 @@ export default function App() {
                         <Route path={path.HOME} element={<AdminHome />} />
                         <Route path={path.CREATE_MOVIE} element={<AdminMovieCreate />} />
                         <Route path={path.READ_MOVIE} element={<AdminMovieRead />} />
+                        <Route path={path.UPDATE_MOVIE} element={<AdminMovieUpdate />} />
                         <Route path={path.ALL} element={<Error />} />
                     </Routes>
                 </AdminLayouts>

@@ -7,6 +7,7 @@ export const path = {
 
     CREATE_MOVIE: 'movie/create',
     READ_MOVIE: 'movie/read',
+    UPDATE_MOVIE: 'movie/update',
 
     CREATE_ACCOUNT: 'account/create',
     READ_ACCOUNT: 'account/read',
