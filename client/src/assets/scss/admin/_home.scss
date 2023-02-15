@@ -1,3 +1,15 @@
 .admin-home-wrapper {
-    font-size: 36px;
+    display: flex;
+
+    .admin-movie-read {
+        width: 100%;
+
+        &:nth-child(1) {
+            margin-right: 0px;
+        }
+
+        .read-container {
+            max-width: none;
+        }
+    }
 }

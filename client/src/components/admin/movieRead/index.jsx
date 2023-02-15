@@ -17,7 +17,7 @@ function MovieRead() {
 
     const deleteMovie = async id => {
         await apiMovieDelete(id)
-        alert('Success')
+        alert('Delete success')
         fetchData()
     }
 

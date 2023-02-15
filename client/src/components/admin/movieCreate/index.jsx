@@ -10,7 +10,7 @@ function MovieCreate() {
         formData.append('file', data.file[0])
         formData.append('title', data.title)
         await apiMovieCreate(formData)
-        alert('Success')
+        alert('Create success')
         e.target.reset()
     }
 

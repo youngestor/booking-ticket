@@ -18,7 +18,7 @@ function MovieUpdate() {
         formData.append('title', data.title)
         formData.append('_id', movie._id)
         await apiMovieUpdate(formData)
-        alert('Success')
+        alert('Update success')
         return navigate(`${path.ADMIN}/${path.READ_MOVIE}`)
     }
     return (
