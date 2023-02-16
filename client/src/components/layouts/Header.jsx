@@ -29,6 +29,7 @@ export default function Header() {
             <div className='header-main'>
                 <div className='item'>Trang chủ</div>
                 <div className='item'>Phim</div>
+                <div className='item'>Rạp chiếu phim</div>
                 <div className='item'>Giới thiệu</div>
                 <div className='item'>Liên hệ</div>
             </div>

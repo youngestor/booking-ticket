@@ -15,7 +15,7 @@ function ListItem() {
     }
 
     return (
-        <div className="list-item">
+        <div className="list-movies-wrapper">
             {movies && movies.map(item =>
                 <div key={item._id} className="item-card">
                     <div className="item">
