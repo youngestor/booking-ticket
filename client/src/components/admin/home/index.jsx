@@ -5,6 +5,8 @@ function AdminHome() {
         <div className='admin-home-wrapper'>
             <AdminMovieRead />
             <AdminMovieRead />
+            <AdminMovieRead />
+            <AdminMovieRead />
         </div>
     );
 }

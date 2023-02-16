@@ -29,7 +29,7 @@ function AdminSidebar() {
                     <NavLink className="link" to={path.CREATE_ACCOUNT}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
-                            Tạo tài khoản
+                            Thêm tài khoản
                         </div>
                     </NavLink>
                     <NavLink className="link" to={path.READ_ACCOUNT}>
@@ -54,13 +54,62 @@ function AdminSidebar() {
                     <NavLink className="link" to={path.CREATE_MOVIE}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
-                            Thêm phim mới
+                            Thêm phim
                         </div>
                     </NavLink>
                     <NavLink className="link" to={path.READ_MOVIE}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Danh sách phim
+                        </div>
+                    </NavLink>
+                </div>
+            }
+            <div onClick={() => {
+                subItem === 3 ? setSubItem(0) : setSubItem(3)
+            }} className="item">
+                <div>
+                    <i className="fa-solid fa-tv"></i>
+                    Cinemas
+                </div>
+                <i className="fa-solid fa-angle-down"></i>
+            </div>
+            {subItem === 3 &&
+                <div className="sub-item">
+                    <NavLink className="link" to={path.CREATE_MOVIE}>
+                        <div className="feature">
+                            <i className="fa-regular fa-circle"></i>
+                            Thêm rạp chiếu
+                        </div>
+                    </NavLink>
+                    <NavLink className="link" to={path.READ_MOVIE}>
+                        <div className="feature">
+                            <i className="fa-regular fa-circle"></i>
+                            Danh sách rạp chiếu
+                        </div>
+                    </NavLink>
+                </div>
+            }<div onClick={() => {
+                subItem === 4 ? setSubItem(0) : setSubItem(4)
+            }} className="item">
+                <div>
+                    <i className="fa-solid fa-utensils"></i>
+                    Foods
+                </div>
+                <i className="fa-solid fa-angle-down"></i>
+            </div>
+            {subItem === 4 &&
+                <div className="sub-item">
+                    <NavLink className="link" to={path.CREATE_MOVIE}>
+                        <div className="feature">
+                            <i className="fa-regular fa-circle"></i>
+                            Thêm thức ăn
+                        </div>
+                    </NavLink>
+                    <NavLink className="link" to={path.READ_MOVIE}>
+                        <div className="feature">
+                            <i className="fa-regular fa-circle"></i>
+                            Danh sách thức ăn
                         </div>
                     </NavLink>
                 </div>

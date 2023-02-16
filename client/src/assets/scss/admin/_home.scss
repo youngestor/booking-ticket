@@ -1,15 +1,20 @@
 .admin-home-wrapper {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 
     .admin-movie-read {
-        width: 100%;
-
-        &:nth-child(1) {
-            margin-right: 0px;
-        }
+        flex: 40%;
+        margin: 10px;
 
         .read-container {
-            max-width: none;
+            max-width: unset;
+            padding: 10px;
+
+            .list-movies {
+                max-height: 30vh;
+            }
         }
     }
 }
