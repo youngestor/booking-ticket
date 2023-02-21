@@ -1,4 +1,4 @@
-import AdminMovieRead from '../movieRead'
+import AdminMovieRead from '../movies/movieRead'
 
 function AdminHome() {
     return (

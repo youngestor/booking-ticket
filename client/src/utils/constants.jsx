@@ -11,6 +11,11 @@ export const path = {
 
     CREATE_ACCOUNT: 'account/create',
     READ_ACCOUNT: 'account/read',
+
+    MOVIES: 'movies',
+    CINEMA: 'cinema',
+    INTRO: 'intro',
+    CONTACT: 'contact',
 }
 
 export const URL = {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { URL } from '../../utils'
 import { apiMovieRead } from '../../services'
 
-function ListItem() {
+function Movies() {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
@@ -40,4 +40,4 @@ function ListItem() {
     );
 }
 
-export default ListItem;
+export default Movies;

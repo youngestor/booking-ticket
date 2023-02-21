@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from 'react-router-dom'
-import { path } from '../../../utils'
+import { path } from '../../utils'
 
 function AdminSidebar() {
     const [subItem, setSubItem] = useState(0)

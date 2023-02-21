@@ -4,13 +4,14 @@ import { Routes, Route } from 'react-router-dom'
 import { path } from '../utils'
 import Layouts from './layouts'
 import Home from './home'
+import Movies from './movies'
 
 
-import AdminLayouts from './admin/layouts'
-import AdminHome from './admin/home'
-import AdminMovieCreate from './admin/movieCreate'
-import AdminMovieRead from './admin/movieRead'
-import AdminMovieUpdate from './admin/movieUpdate'
+import AdminLayouts from '../admin/layouts'
+import AdminHome from '../admin/home'
+import AdminMovieCreate from '../admin/movies/movieCreate'
+import AdminMovieRead from '../admin/movies/movieRead'
+import AdminMovieUpdate from '../admin/movies/movieUpdate'
 
 import Error from './error'
 
@@ -21,6 +22,7 @@ export default function App() {
                 <Layouts>
                     <Routes>
                         <Route path={path.HOME} element={<Home />} />
+                        <Route path={path.MOVIES} element={<Movies />} />
                         <Route path={path.ALL} element={<Error />} />
                     </Routes>
                 </Layouts>

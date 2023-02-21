@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import ListItem from './ListItem'
+import Movies from '../movies'
+import { listSlideImage } from '../../assets/img/slider'
 
 export default function Home() {
     const [position, setPosition] = useState(3)
-
-    const listSlideImage = [
-        'https://media.lottecinemavn.com/Media/WebAdmin/26b687f7c7f747c18e03acb93e3a9b76.png',
-        'https://media.lottecinemavn.com/Media/WebAdmin/bbff377d10df46949db98d20b47c108f.jpg',
-        'https://media.lottecinemavn.com/Media/WebAdmin/4ed16c51735a4ffab5877e648bfe9c1b.jpg',
-        'https://media.lottecinemavn.com/Media/WebAdmin/1525b37ef21a430b8f314025d21d7778.jpg'
-    ]
 
     const prevSlideImage = () => {
         position > 0 ? setPosition(position - 1)
@@ -43,7 +37,7 @@ export default function Home() {
                 <img src={listSlideImage[position]} alt='' />
                 <i onClick={() => nextSlideImage()} className="fa-solid fa-chevron-right"></i>
             </div>
-            <ListItem />
+            <Movies />
         </div>
     )
 }

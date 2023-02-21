@@ -1,5 +1,7 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { logoHeader, iconFacebook, iconApp } from '../../assets/img'
+import { path } from '../../utils'
 
 export default function Header() {
     return (
@@ -27,11 +29,31 @@ export default function Header() {
                 <img src={logoHeader} alt='' />
             </div>
             <div className='header-main'>
-                <div className='item'>Trang chủ</div>
-                <div className='item'>Phim</div>
-                <div className='item'>Rạp chiếu phim</div>
-                <div className='item'>Giới thiệu</div>
-                <div className='item'>Liên hệ</div>
+                <div className='item'>
+                    <NavLink to={path.HOME}>
+                        Trang chủ
+                    </NavLink>
+                </div>
+                <div className='item'>
+                    <NavLink to={path.MOVIES}>
+                        Phim
+                    </NavLink>
+                </div>
+                <div className='item'>
+                    <NavLink to={path.CINEMA}>
+                        Rạp chiếu phim
+                    </NavLink>
+                </div>
+                <div className='item'>
+                    <NavLink to={path.INTRO}>
+                        Giới thiệu
+                    </NavLink>
+                </div>
+                <div className='item'>
+                    <NavLink to={path.CONTACT}>
+                        Liên hệ
+                    </NavLink>
+                </div>
             </div>
         </div>
     )

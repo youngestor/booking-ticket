@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { logoAdminHeader, avatarUser } from '../../../assets/img/admin'
+import { logoAdminHeader, avatarUser } from '../../assets/img/admin'
 
 function AdminHeader() {
     const [user, setUser] = useState(false)

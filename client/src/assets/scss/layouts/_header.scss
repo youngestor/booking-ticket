@@ -69,6 +69,16 @@
                 padding-right: 0;
                 border-right: none;
             }
+
+            a {
+                text-decoration: none;
+                color: #444644;
+                font-weight: 600;
+
+                &.active {
+                    color: #a88300
+                }
+            }
         }
     }
 }
