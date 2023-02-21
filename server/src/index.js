@@ -5,6 +5,7 @@ const fileupload = require("express-fileupload")
 const bodyParser = require('body-parser')
 const connectDB = require('./config/mongoose')
 const movieRoutes = require('./routes/movieRoutes')
+const cinemaRoutes = require('./routes/cinemaRoutes')
 
 const app = express()
 const PORT = 7000
@@ -21,5 +22,6 @@ app.use(bodyParser.json({ limit: "50mb" }))
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }))
 
 movieRoutes(app)
+cinemaRoutes(app)
 
 app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`))
