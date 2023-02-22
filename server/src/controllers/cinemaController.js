@@ -41,10 +41,6 @@ const handleUpdate = (req, res, next) => {
     const name = req.body.name
     const location = req.body.location
     const image = req.files.file.name
-    if (!area || !image || !location || !name)
-        return res.status(500).json({
-            errMessage: 'Please enter full information!'
-        })
     Cinema.updateOne({ _id }, { area, image, location, name })
         .then(cinema => {
             req.files.file.mv("./src/uploads/" + image)

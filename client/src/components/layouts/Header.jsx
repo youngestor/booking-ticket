@@ -40,7 +40,7 @@ export default function Header() {
                     </NavLink>
                 </div>
                 <div className='item'>
-                    <NavLink to={path.CINEMA}>
+                    <NavLink to={path.CINEMAS}>
                         Rạp chiếu phim
                     </NavLink>
                 </div>

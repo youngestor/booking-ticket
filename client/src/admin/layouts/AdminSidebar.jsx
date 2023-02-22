@@ -76,13 +76,13 @@ function AdminSidebar() {
             </div>
             {subItem === 3 &&
                 <div className="sub-item">
-                    <NavLink className="link" to={path.CREATE_MOVIE}>
+                    <NavLink className="link" to={path.CREATE_CINEMA}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Thêm rạp chiếu
                         </div>
                     </NavLink>
-                    <NavLink className="link" to={path.READ_MOVIE}>
+                    <NavLink className="link" to={path.READ_CINEMA}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Danh sách rạp chiếu
@@ -100,13 +100,13 @@ function AdminSidebar() {
             </div>
             {subItem === 4 &&
                 <div className="sub-item">
-                    <NavLink className="link" to={path.CREATE_MOVIE}>
+                    <NavLink className="link" to={path.CREATE_FOOD}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Thêm thức ăn
                         </div>
                     </NavLink>
-                    <NavLink className="link" to={path.READ_MOVIE}>
+                    <NavLink className="link" to={path.READ_FOOD}>
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Danh sách thức ăn
