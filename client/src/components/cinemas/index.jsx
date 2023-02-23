@@ -15,23 +15,16 @@ function Cinemas() {
     }
 
     return (
-        <div className="list-movies-wrapper">
+        <div className="list-cinemas-wrapper">
             {cinema && cinema.map(item =>
                 <div key={item._id} className="item-card">
                     <div className="item">
-                        <div className="img">
-                            <img src={`${URL.SERVER}/${item.image}`} alt="" />
-                            <div className="coating">
-                                <div className="feature">
-                                    <a href="/">Đặt vé</a>
-                                </div>
-                                <div className="feature">
-                                    <a href="/">Chi tiết</a>
-                                </div>
-                            </div>
-                        </div>
+                        <img src={`${URL.SERVER}/${item.image}`} alt="" />
                         <div className="title">
                             {item.name}
+                        </div>
+                        <div className="feature">
+                            <a href="/">Xem thêm</a>
                         </div>
                     </div>
                 </div>)

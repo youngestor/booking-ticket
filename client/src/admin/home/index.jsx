@@ -1,13 +1,17 @@
-import AdminMovieRead from '../movies/movieRead'
-import AdminCinemaRead from '../cinemas/cinemaRead'
+import { NavLink, Outlet } from "react-router-dom";
+import { path } from "../../utils";
 
 function AdminHome() {
+
     return (
         <div className='admin-home-wrapper'>
-            <AdminMovieRead />
-            <AdminCinemaRead />
-            <AdminMovieRead />
-            <AdminMovieRead />
+            <div className='home-link'>
+                <NavLink to={path.MOVIES}>Movies</NavLink>
+                <NavLink to={path.CINEMAS}>Cinemas</NavLink>
+                <NavLink to={path.FOOD}>Food</NavLink>
+                <NavLink to={path.ACCOUNTS}>Accounts</NavLink>
+            </div>
+            <Outlet />
         </div>
     );
 }

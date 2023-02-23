@@ -14,13 +14,14 @@ html {
 @import "./layouts/footer";
 @import "./layouts/app";
 @import "./listMovies";
+@import "./listCinemas";
 @import "./home";
 
 @import "./admin/layouts/header";
 @import "./admin/layouts/sidebar";
 @import "./admin/layouts/admin";
-@import "./admin/home";
 @import "./admin/movieCreate";
 @import "./admin/movieRead";
+@import "./admin/home";
 
 @import "./error";

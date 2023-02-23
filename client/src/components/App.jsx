@@ -1,12 +1,11 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 import { path } from '../utils'
 import Layouts from './layouts'
 import Home from './home'
 import Movies from './movies'
 import Cinemas from './cinemas'
-
 
 import AdminLayouts from '../admin/layouts'
 import AdminHome from '../admin/home'
@@ -25,7 +24,7 @@ export default function App() {
             <Route path={path.ALL_HOME} element={
                 <Layouts>
                     <Routes>
-                        <Route path={path.HOME} element={<Home />} />
+                        <Route index element={<Home />} />
                         <Route path={path.MOVIES} element={<Movies />} />
                         <Route path={path.CINEMAS} element={<Cinemas />} />
                         <Route path={path.ALL} element={<Error />} />
@@ -36,7 +35,13 @@ export default function App() {
             <Route path={path.ALL_ADMIN} element={
                 <AdminLayouts>
                     <Routes>
-                        <Route path={path.HOME} element={<AdminHome />} />
+                        <Route path={path.HOME} element={<AdminHome />} >
+                            <Route index element={<Navigate to={path.MOVIES} />} />
+                            <Route path={path.MOVIES} element={<AdminMovieRead />} />
+                            <Route path={path.CINEMAS} element={<AdminCinemaRead />} />
+                            <Route path={path.FOOD} element={<div>Food</div>} />
+                            <Route path={path.ACCOUNTS} element={<div>Accounts</div>} />
+                        </Route>
                         <Route path={path.CREATE_MOVIE} element={<AdminMovieCreate />} />
                         <Route path={path.READ_MOVIE} element={<AdminMovieRead />} />
                         <Route path={path.UPDATE_MOVIE} element={<AdminMovieUpdate />} />

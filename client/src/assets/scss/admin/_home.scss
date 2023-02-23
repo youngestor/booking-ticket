@@ -1,19 +1,16 @@
 .admin-home-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
 
-    .admin-movie-read {
-        flex: 40%;
-        margin: 10px;
+    .home-link {
+        margin: 40px;
 
-        .read-container {
-            max-width: unset;
-            padding: 10px;
+        a {
+            margin-right: 40px;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
 
-            .list-movies {
-                max-height: 30vh;
+            &.active {
+                color: #a88300;
             }
         }
     }

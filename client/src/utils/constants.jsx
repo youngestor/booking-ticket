@@ -21,6 +21,8 @@ export const path = {
 
     MOVIES: 'movies',
     CINEMAS: 'cinemas',
+    FOOD: 'food',
+    ACCOUNTS: 'accounts',
     INTRO: 'intro',
     CONTACT: 'contact',
 }

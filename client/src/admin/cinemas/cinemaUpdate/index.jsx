@@ -15,7 +15,9 @@ function CinemaUpdate() {
     const onSubmit = async (data, e) => {
         const formData = new FormData()
         formData.append('file', data.file[0])
-        formData.append('title', data.title)
+        formData.append('area', data.area)
+        formData.append('name', data.name)
+        formData.append('location', data.location)
         formData.append('_id', cinema._id)
         await apiCinemaUpdate(formData)
         alert('Update success')

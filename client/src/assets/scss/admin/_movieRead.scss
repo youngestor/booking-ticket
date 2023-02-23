@@ -3,7 +3,6 @@
 
     .read-container {
         padding: 40px;
-        max-width: 70%;
         background: #dde7fb;
         border-radius: 16px;
     }
@@ -33,8 +32,8 @@
 
                 img {
                     display: block;
-                    width: 40px;
-                    height: auto;
+                    width: auto;
+                    max-height: 40px;
                     margin-right: 20px;
                 }
             }
