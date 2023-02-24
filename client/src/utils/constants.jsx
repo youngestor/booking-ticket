@@ -16,12 +16,8 @@ export const path = {
     CREATE_ACCOUNT: 'account/create',
     READ_ACCOUNT: 'account/read',
 
-    CREATE_FOOD: 'food/create',
-    READ_FOOD: 'food/read',
-
     MOVIES: 'movies',
     CINEMAS: 'cinemas',
-    FOOD: 'food',
     ACCOUNTS: 'accounts',
     INTRO: 'intro',
     CONTACT: 'contact',

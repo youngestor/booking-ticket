@@ -89,30 +89,6 @@ function AdminSidebar() {
                         </div>
                     </NavLink>
                 </div>
-            }<div onClick={() => {
-                subItem === 4 ? setSubItem(0) : setSubItem(4)
-            }} className="item">
-                <div>
-                    <i className="fa-solid fa-utensils"></i>
-                    Foods
-                </div>
-                <i className="fa-solid fa-angle-down"></i>
-            </div>
-            {subItem === 4 &&
-                <div className="sub-item">
-                    <NavLink className="link" to={path.CREATE_FOOD}>
-                        <div className="feature">
-                            <i className="fa-regular fa-circle"></i>
-                            Thêm thức ăn
-                        </div>
-                    </NavLink>
-                    <NavLink className="link" to={path.READ_FOOD}>
-                        <div className="feature">
-                            <i className="fa-regular fa-circle"></i>
-                            Danh sách thức ăn
-                        </div>
-                    </NavLink>
-                </div>
             }
         </div>
     );

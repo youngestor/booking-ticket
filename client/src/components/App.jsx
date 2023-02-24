@@ -6,6 +6,7 @@ import Layouts from './layouts'
 import Home from './home'
 import Movies from './movies'
 import Cinemas from './cinemas'
+import Intro from './intro'
 
 import AdminLayouts from '../admin/layouts'
 import AdminHome from '../admin/home'
@@ -27,6 +28,7 @@ export default function App() {
                         <Route index element={<Home />} />
                         <Route path={path.MOVIES} element={<Movies />} />
                         <Route path={path.CINEMAS} element={<Cinemas />} />
+                        <Route path={path.INTRO} element={<Intro />} />
                         <Route path={path.ALL} element={<Error />} />
                     </Routes>
                 </Layouts>
@@ -39,7 +41,6 @@ export default function App() {
                             <Route index element={<Navigate to={path.MOVIES} />} />
                             <Route path={path.MOVIES} element={<AdminMovieRead />} />
                             <Route path={path.CINEMAS} element={<AdminCinemaRead />} />
-                            <Route path={path.FOOD} element={<div>Food</div>} />
                             <Route path={path.ACCOUNTS} element={<div>Accounts</div>} />
                         </Route>
                         <Route path={path.CREATE_MOVIE} element={<AdminMovieCreate />} />

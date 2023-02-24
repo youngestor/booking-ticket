@@ -8,7 +8,6 @@ function AdminHome() {
             <div className='home-link'>
                 <NavLink to={path.MOVIES}>Movies</NavLink>
                 <NavLink to={path.CINEMAS}>Cinemas</NavLink>
-                <NavLink to={path.FOOD}>Food</NavLink>
                 <NavLink to={path.ACCOUNTS}>Accounts</NavLink>
             </div>
             <Outlet />
