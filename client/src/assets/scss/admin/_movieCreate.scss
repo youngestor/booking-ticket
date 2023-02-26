@@ -3,7 +3,6 @@
 
     .create-container {
         padding: 40px;
-        max-width: 70%;
         background: #dde7fb;
         border-radius: 16px;
     }
@@ -24,6 +23,7 @@
 
         span {
             font-size: 18px;
+            width: 36%;
         }
 
         input {

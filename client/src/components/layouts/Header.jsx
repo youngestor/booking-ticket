@@ -49,11 +49,6 @@ export default function Header() {
                         Giới thiệu
                     </NavLink>
                 </div>
-                <div className='item'>
-                    <NavLink to={path.CONTACT}>
-                        Liên hệ
-                    </NavLink>
-                </div>
             </div>
         </div>
     )
