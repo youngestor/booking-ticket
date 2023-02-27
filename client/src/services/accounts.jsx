@@ -11,3 +11,6 @@ export const apiAccountUpdate = data =>
 
 export const apiAccountDelete = id =>
     axiosClient.post('/api/accounts/delete', { _id: id })
+
+export const apiAccountLogin = data =>
+    axiosClient.post('/api/accounts/login', data)

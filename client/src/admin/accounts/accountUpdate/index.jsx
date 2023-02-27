@@ -10,7 +10,7 @@ function AccountUpdate() {
     const location = useLocation()
     const account = location.state
 
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     const onSubmit = async data => {
         data._id = account._id

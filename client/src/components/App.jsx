@@ -1,12 +1,6 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-
 import { path } from '../utils'
-import Layouts from './layouts'
-import Home from './home'
-import Movies from './movies'
-import Cinemas from './cinemas'
-import Intro from './intro'
 
 import AdminLayouts from '../admin/layouts'
 import AdminHome from '../admin/home'
@@ -23,6 +17,14 @@ import AdminAccountCreate from '../admin/accounts/accountCreate'
 import AdminAccountRead from '../admin/accounts/accountRead'
 import AdminAccountUpdate from '../admin/accounts/accountUpdate'
 
+import Layouts from './layouts'
+import Home from './home'
+import Movies from './movies'
+import Cinemas from './cinemas'
+import Intro from './intro'
+import Login from './login'
+import Register from './register'
+
 import Error from './error'
 
 export default function App() {
@@ -31,8 +33,8 @@ export default function App() {
             <Route path={path.ALL_HOME} element={
                 <Layouts>
                     <Routes>
-                        <Route path={path.LOGIN} element={<div>Login</div>} />
-                        <Route path={path.REGISTER} element={<div>Register</div>} />
+                        <Route path={path.LOGIN} element={<Login />} />
+                        <Route path={path.REGISTER} element={<Register />} />
                         <Route index element={<Home />} />
                         <Route path={path.MOVIES} element={<Movies />} />
                         <Route path={path.CINEMAS} element={<Cinemas />} />

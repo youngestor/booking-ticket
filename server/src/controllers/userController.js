@@ -77,4 +77,37 @@ const handleDelete = (req, res, next) => {
         .catch(next)
 }
 
-module.exports = { handleCreate, handleRead, handleUpdate, handleDelete }
+const handleLogin = (req, res, next) => {
+    const username = req.body.username
+    const password = req.body.password
+
+    if (!username || !password)
+        return res.status(500).json({
+            errCode: 1,
+            errMessage: 'Please enter full information!'
+        })
+
+    User.findOne({ username })
+        .then(user => {
+            if (!user)
+                return res.status(500).json({
+                    errMessage: 'User account does not exist!'
+                })
+
+            const rs = bcrypt.compareSync(password, user.password)
+            if (!rs)
+                return res.status(500).json({
+                    errMessage: 'The password entered is incorrect!'
+                })
+
+            const userInfo = user.toObject()
+            delete userInfo.password
+            return res.status(200).json({
+                errCode: 0,
+                user: userInfo
+            })
+        })
+        .catch(next)
+}
+
+module.exports = { handleCreate, handleRead, handleUpdate, handleDelete, handleLogin }
