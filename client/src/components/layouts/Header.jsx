@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { logoHeader, iconFacebook, iconApp } from '../../assets/img'
+import { NavLink, Link } from 'react-router-dom'
+import { logoHeader } from '../../assets/img'
 import { path } from '../../utils'
 
 export default function Header() {
@@ -10,23 +10,37 @@ export default function Header() {
                 <div className='top-container'>
                     <div className='item-left'>
                         <div className='left-item'>
-                            <img src={iconApp} alt='' />
-                            Lotte Cinema APP
+                            <Link target="_blank" to='https://www.facebook.com/youngestor'>
+                                <i className="fa-brands fa-square-facebook"></i>
+                                Facebook
+                            </Link>
                         </div>
                         <div className='left-item'>
-                            <img src={iconFacebook} alt='' />
-                            Lotte Cinema Facebook
+
+                            <Link target="_blank" to='https://github.com/youngestor'>
+                                <i className="fa-brands fa-square-github"></i>
+                                GitHub
+                            </Link>
                         </div>
                     </div>
                     <div className='item-right'>
-                        <div className='right-item'>Đăng nhập</div>
-                        <div className='right-item'>Thẻ thành viên</div>
-                        <div className='right-item'>Hỗ trợ khách hàng</div>
+                        <div className='right-item'>
+                            <Link to='login'>
+                                Đăng nhập
+                            </Link>
+                        </div>
+                        <div className='right-item'>
+                            <Link to='register'>
+                                Đăng ký
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
             <div className='header-logo'>
-                <img src={logoHeader} alt='' />
+                <Link to={path.HOME}>
+                    <img src={logoHeader} alt='' />
+                </Link>
             </div>
             <div className='header-main'>
                 <div className='item'>

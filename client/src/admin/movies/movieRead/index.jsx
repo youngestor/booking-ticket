@@ -32,6 +32,8 @@ function MovieRead() {
                         <div key={item._id} className='item'>
                             <div className='film'>
                                 <img src={`${URL.SERVER}/${item.image}`} alt="" />
+                            </div>
+                            <div className='film'>
                                 {item.title}
                             </div>
                             <div className='feature'>

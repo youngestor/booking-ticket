@@ -15,12 +15,16 @@ export const path = {
 
     CREATE_ACCOUNT: 'account/create',
     READ_ACCOUNT: 'account/read',
+    UPDATE_ACCOUNT: 'account/update',
 
     MOVIES: 'movies',
     CINEMAS: 'cinemas',
     ACCOUNTS: 'accounts',
     INTRO: 'intro',
     CONTACT: 'contact',
+
+    LOGIN: 'login',
+    REGISTER: 'register'
 }
 
 export const URL = {

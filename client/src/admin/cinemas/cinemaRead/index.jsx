@@ -15,7 +15,7 @@ function CinemaRead() {
         setCinemas(res.data.cinema)
     }
 
-    const deleteMovie = async id => {
+    const deleteCinema = async id => {
         await apiCinemaDelete(id)
         alert('Delete success')
         fetchData()
@@ -32,13 +32,15 @@ function CinemaRead() {
                         <div key={item._id} className='item'>
                             <div className='film'>
                                 <img src={`${URL.SERVER}/${item.image}`} alt="" />
+                            </div>
+                            <div className='film'>
                                 {item.name}
                             </div>
                             <div className='feature'>
                                 <Link to={`${path.ADMIN}/${path.UPDATE_CINEMA}`} state={item}>
                                     <i className="fa-solid fa-pen"></i>
                                 </Link>
-                                <i onClick={() => deleteMovie(item._id)} className="fa-solid fa-trash"></i>
+                                <i onClick={() => deleteCinema(item._id)} className="fa-solid fa-trash"></i>
                             </div>
                         </div>)
                     }

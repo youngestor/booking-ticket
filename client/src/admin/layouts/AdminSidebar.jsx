@@ -16,31 +16,6 @@ function AdminSidebar() {
                 </div>
             </NavLink>
             <div onClick={() => {
-                subItem === 1 ? setSubItem(0) : setSubItem(1)
-            }} className="item">
-                <div>
-                    <i className="fa-regular fa-user"></i>
-                    Accounts
-                </div>
-                <i className="fa-solid fa-angle-down"></i>
-            </div>
-            {subItem === 1 &&
-                <div className="sub-item">
-                    <NavLink className="link" to={path.CREATE_ACCOUNT}>
-                        <div className="feature">
-                            <i className="fa-regular fa-circle"></i>
-                            Thêm tài khoản
-                        </div>
-                    </NavLink>
-                    <NavLink className="link" to={path.READ_ACCOUNT}>
-                        <div className="feature">
-                            <i className="fa-regular fa-circle"></i>
-                            Danh sách tài khoản
-                        </div>
-                    </NavLink>
-                </div>
-            }
-            <div onClick={() => {
                 subItem === 2 ? setSubItem(0) : setSubItem(2)
             }} className="item">
                 <div>
@@ -86,6 +61,31 @@ function AdminSidebar() {
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Danh sách rạp chiếu
+                        </div>
+                    </NavLink>
+                </div>
+            }
+            <div onClick={() => {
+                subItem === 1 ? setSubItem(0) : setSubItem(1)
+            }} className="item">
+                <div>
+                    <i className="fa-regular fa-user"></i>
+                    Accounts
+                </div>
+                <i className="fa-solid fa-angle-down"></i>
+            </div>
+            {subItem === 1 &&
+                <div className="sub-item">
+                    <NavLink className="link" to={path.CREATE_ACCOUNT}>
+                        <div className="feature">
+                            <i className="fa-regular fa-circle"></i>
+                            Thêm tài khoản
+                        </div>
+                    </NavLink>
+                    <NavLink className="link" to={path.READ_ACCOUNT}>
+                        <div className="feature">
+                            <i className="fa-regular fa-circle"></i>
+                            Danh sách tài khoản
                         </div>
                     </NavLink>
                 </div>

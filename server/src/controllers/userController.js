@@ -47,4 +47,34 @@ const handleRead = (req, res, next) => {
         .catch(next)
 }
 
-module.exports = { handleCreate, handleRead }
+const handleUpdate = (req, res, next) => {
+    const _id = req.body._id
+    if (!_id)
+        return res.status(500).json({
+            errMessage: 'Please enter full information!'
+        })
+
+    const fullname = req.body.fullname
+    const username = req.body.username
+    User.updateOne({ _id }, { fullname, username })
+        .then(user => res.status(200).json({
+            errCode: 0
+        }))
+        .catch(next)
+}
+
+const handleDelete = (req, res, next) => {
+    const _id = req.body._id
+    if (!_id)
+        return res.status(500).json({
+            errMessage: 'Please enter full information!'
+        })
+
+    User.deleteOne({ _id })
+        .then(user => res.status(200).json({
+            user
+        }))
+        .catch(next)
+}
+
+module.exports = { handleCreate, handleRead, handleUpdate, handleDelete }

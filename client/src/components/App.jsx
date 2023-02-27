@@ -21,6 +21,7 @@ import AdminCinemaUpdate from '../admin/cinemas/cinemaUpdate'
 
 import AdminAccountCreate from '../admin/accounts/accountCreate'
 import AdminAccountRead from '../admin/accounts/accountRead'
+import AdminAccountUpdate from '../admin/accounts/accountUpdate'
 
 import Error from './error'
 
@@ -30,6 +31,8 @@ export default function App() {
             <Route path={path.ALL_HOME} element={
                 <Layouts>
                     <Routes>
+                        <Route path={path.LOGIN} element={<div>Login</div>} />
+                        <Route path={path.REGISTER} element={<div>Register</div>} />
                         <Route index element={<Home />} />
                         <Route path={path.MOVIES} element={<Movies />} />
                         <Route path={path.CINEMAS} element={<Cinemas />} />
@@ -46,7 +49,7 @@ export default function App() {
                             <Route index element={<Navigate to={path.MOVIES} />} />
                             <Route path={path.MOVIES} element={<AdminMovieRead />} />
                             <Route path={path.CINEMAS} element={<AdminCinemaRead />} />
-                            <Route path={path.ACCOUNTS} element={<div>Accounts</div>} />
+                            <Route path={path.ACCOUNTS} element={<AdminAccountRead />} />
                         </Route>
                         <Route path={path.CREATE_MOVIE} element={<AdminMovieCreate />} />
                         <Route path={path.READ_MOVIE} element={<AdminMovieRead />} />
@@ -58,6 +61,7 @@ export default function App() {
 
                         <Route path={path.CREATE_ACCOUNT} element={<AdminAccountCreate />} />
                         <Route path={path.READ_ACCOUNT} element={<AdminAccountRead />} />
+                        <Route path={path.UPDATE_ACCOUNT} element={<AdminAccountUpdate />} />
 
                         <Route path={path.ALL} element={<Error />} />
                     </Routes>
