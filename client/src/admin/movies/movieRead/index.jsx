@@ -16,9 +16,10 @@ function MovieRead() {
     }
 
     const deleteMovie = async id => {
-        await apiMovieDelete(id)
-        alert('Delete success')
-        fetchData()
+        if (window.confirm("Xóa vĩnh viễn?")) {
+            await apiMovieDelete(id)
+            fetchData()
+        }
     }
 
     return (

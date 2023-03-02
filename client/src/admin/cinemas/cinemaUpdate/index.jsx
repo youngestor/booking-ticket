@@ -15,8 +15,6 @@ function CinemaUpdate() {
     const onSubmit = async (data, e) => {
         const formData = new FormData()
         formData.append('file', data.file[0])
-        formData.append('area', data.area)
-        formData.append('name', data.name)
         formData.append('location', data.location)
         formData.append('_id', cinema._id)
         await apiCinemaUpdate(formData)
@@ -28,14 +26,6 @@ function CinemaUpdate() {
             <div className='create-container'>
                 <div className='title'>
                     Sửa rạp
-                </div>
-                <div className='form-control'>
-                    <span>Khu vực</span>
-                    <input defaultValue={cinema.area} {...register('area', { required: true })} type='text' />
-                </div>
-                <div className='form-control'>
-                    <span>Tên rạp</span>
-                    <input defaultValue={cinema.name} {...register('name', { required: true })} type='text' />
                 </div>
                 <div className='form-control'>
                     <span>Vị trí</span>

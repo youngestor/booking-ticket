@@ -8,8 +8,6 @@ function CinemaCreate() {
     const onSubmit = async (data, e) => {
         const formData = new FormData()
         formData.append('file', data.file[0])
-        formData.append('area', data.area)
-        formData.append('name', data.name)
         formData.append('location', data.location)
         await apiCinemaCreate(formData)
         alert('Create success')
@@ -21,14 +19,6 @@ function CinemaCreate() {
             <div className='create-container'>
                 <div className='title'>
                     Thêm rạp chiếu
-                </div>
-                <div className='form-control'>
-                    <span>Khu vực</span>
-                    <input {...register('area', { required: true })} type='text' />
-                </div>
-                <div className='form-control'>
-                    <span>Tên rạp</span>
-                    <input {...register('name', { required: true })} type='text' />
                 </div>
                 <div className='form-control'>
                     <span>Vị trí</span>

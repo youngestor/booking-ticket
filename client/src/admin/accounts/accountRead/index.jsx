@@ -16,9 +16,10 @@ function AccountRead() {
     }
 
     const deleteAccount = async id => {
-        await apiAccountDelete(id)
-        alert('Delete success')
-        fetchData()
+        if (window.confirm("Xóa vĩnh viễn?")) {
+            await apiAccountDelete(id)
+            fetchData()
+        }
     }
 
     return (

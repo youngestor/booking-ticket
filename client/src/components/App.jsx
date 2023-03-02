@@ -17,6 +17,10 @@ import AdminAccountCreate from '../admin/accounts/accountCreate'
 import AdminAccountRead from '../admin/accounts/accountRead'
 import AdminAccountUpdate from '../admin/accounts/accountUpdate'
 
+import AdminScheduleCreate from '../admin/schedules/scheduleCreate'
+import AdminScheduleRead from '../admin/schedules/scheduleRead'
+import AdminScheduleUpdate from '../admin/schedules/scheduleUpdate'
+
 import Layouts from './layouts'
 import Home from './home'
 import Movies from './movies'
@@ -35,10 +39,12 @@ export default function App() {
                     <Routes>
                         <Route path={path.LOGIN} element={<Login />} />
                         <Route path={path.REGISTER} element={<Register />} />
+
                         <Route index element={<Home />} />
                         <Route path={path.MOVIES} element={<Movies />} />
                         <Route path={path.CINEMAS} element={<Cinemas />} />
                         <Route path={path.INTRO} element={<Intro />} />
+
                         <Route path={path.ALL} element={<Error />} />
                     </Routes>
                 </Layouts>
@@ -52,7 +58,9 @@ export default function App() {
                             <Route path={path.MOVIES} element={<AdminMovieRead />} />
                             <Route path={path.CINEMAS} element={<AdminCinemaRead />} />
                             <Route path={path.ACCOUNTS} element={<AdminAccountRead />} />
+                            <Route path={path.SCHEDULES} element={<AdminScheduleRead />} />
                         </Route>
+
                         <Route path={path.CREATE_MOVIE} element={<AdminMovieCreate />} />
                         <Route path={path.READ_MOVIE} element={<AdminMovieRead />} />
                         <Route path={path.UPDATE_MOVIE} element={<AdminMovieUpdate />} />
@@ -64,6 +72,10 @@ export default function App() {
                         <Route path={path.CREATE_ACCOUNT} element={<AdminAccountCreate />} />
                         <Route path={path.READ_ACCOUNT} element={<AdminAccountRead />} />
                         <Route path={path.UPDATE_ACCOUNT} element={<AdminAccountUpdate />} />
+
+                        <Route path={path.CREATE_SCHEDULE} element={<AdminScheduleCreate />} />
+                        <Route path={path.READ_SCHEDULE} element={<AdminScheduleRead />} />
+                        <Route path={path.UPDATE_SCHEDULE} element={<AdminScheduleUpdate />} />
 
                         <Route path={path.ALL} element={<Error />} />
                     </Routes>

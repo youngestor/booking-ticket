@@ -23,10 +23,7 @@ function Movies() {
                             <img src={`${URL.SERVER}/${item.image}`} alt="" />
                             <div className="coating">
                                 <div className="feature">
-                                    <a href="/">Đặt vé</a>
-                                </div>
-                                <div className="feature">
-                                    <a href="/">Chi tiết</a>
+                                    <a href="/">Xem thêm</a>
                                 </div>
                             </div>
                         </div>

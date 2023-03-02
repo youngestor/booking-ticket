@@ -26,17 +26,19 @@
             width: 36%;
         }
 
-        input {
+        input,
+        select {
             display: block;
             width: 80%;
             border: 1px solid black;
             border-radius: 4px;
             font-size: 16px;
             outline: none;
+            padding: 10px;
         }
 
-        input[type="text"] {
-            padding: 10px;
+        input[type="file"] {
+            padding: 0;
         }
 
         input::-webkit-file-upload-button {

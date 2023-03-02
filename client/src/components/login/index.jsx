@@ -1,16 +1,20 @@
 import { useForm } from 'react-hook-form'
-import { apiAccountLogin } from '../../services'
 import { Link, useNavigate } from 'react-router-dom'
+import { apiAccountLogin } from '../../services'
+import { connect } from 'react-redux'
 import { path } from '../../utils'
+import { loginSuccess } from '../../redux/actions'
 
-function Login() {
+function Login({ loginSuccess }) {
     const { register, handleSubmit } = useForm()
     const navigate = useNavigate()
 
     const onSubmit = async data => {
-        await apiAccountLogin(data)
+        let user = await apiAccountLogin(data)
+        if (user && user.data.errCode === 0)
+            loginSuccess(user.data.user)
         alert('Login success')
-        return navigate(`/${path.HOME}`, { state: data })
+        return navigate(-1)
     }
 
     return (
@@ -35,4 +39,10 @@ function Login() {
     );
 }
 
-export default Login;
+const mapStateToProps = () => ({})
+
+const mapActionsToProps = {
+    loginSuccess
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Login)

@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { URL, path } from '../../../utils'
-import { apiCinemaRead, apiCinemaDelete } from '../../../services'
+import { path } from '../../../utils'
+import { apiScheduleRead, apiScheduleDelete } from '../../../services'
 
-function CinemaRead() {
-    const [cinemas, setCinemas] = useState([])
+function ScheduleRead() {
+    const [schedules, setSchedules] = useState([])
 
     useEffect(() => {
         fetchData()
     }, [])
 
     const fetchData = async () => {
-        let res = await apiCinemaRead()
-        setCinemas(res.data.cinema)
+        let res = await apiScheduleRead()
+        setSchedules(res.data.schedule)
     }
 
-    const deleteCinema = async id => {
+    const deleteSchedule = async id => {
         if (window.confirm("Xóa vĩnh viễn?")) {
-            await apiCinemaDelete(id)
+            await apiScheduleDelete(id)
             fetchData()
         }
     }
@@ -29,19 +29,19 @@ function CinemaRead() {
                     Danh sách rạp chiếu
                 </div>
                 <div className='list-movies'>
-                    {cinemas && cinemas.map(item =>
+                    {schedules && schedules.map(item =>
                         <div key={item._id} className='item'>
                             <div className='film'>
-                                <img src={`${URL.SERVER}/${item.image}`} alt="" />
+                                {item.datetime}
                             </div>
                             <div className='film'>
-                                {item.location}
+                                {item.number}
                             </div>
                             <div className='feature'>
-                                <Link to={`${path.ADMIN}/${path.UPDATE_CINEMA}`} state={item}>
+                                <Link to={`${path.ADMIN}/${path.UPDATE_SCHEDULE}`} state={item}>
                                     <i className="fa-solid fa-pen"></i>
                                 </Link>
-                                <i onClick={() => deleteCinema(item._id)} className="fa-solid fa-trash"></i>
+                                <i onClick={() => deleteSchedule(item._id)} className="fa-solid fa-trash"></i>
                             </div>
                         </div>)
                     }
@@ -51,4 +51,4 @@ function CinemaRead() {
     );
 }
 
-export default CinemaRead;
+export default ScheduleRead;

@@ -21,7 +21,7 @@ function Cinemas() {
                     <div className="item">
                         <img src={`${URL.SERVER}/${item.image}`} alt="" />
                         <div className="title">
-                            {item.name}
+                            {item.location}
                         </div>
                         <div className="feature">
                             <a href="/">Xem thêm</a>

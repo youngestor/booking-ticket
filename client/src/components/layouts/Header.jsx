@@ -1,9 +1,11 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import { logoHeader } from '../../assets/img'
 import { path } from '../../utils'
+import { processLogout } from '../../redux/actions'
 
-export default function Header() {
+function Header({ processLogout, isLoggedIn, userInfo }) {
     return (
         <div className='header'>
             <div className='header-top'>
@@ -24,16 +26,32 @@ export default function Header() {
                         </div>
                     </div>
                     <div className='item-right'>
-                        <div className='right-item'>
-                            <Link to='login'>
-                                Đăng nhập
-                            </Link>
-                        </div>
-                        <div className='right-item'>
-                            <Link to='register'>
-                                Đăng ký
-                            </Link>
-                        </div>
+                        {!isLoggedIn ?
+                            <>
+                                <div className='right-item'>
+                                    <Link to='login'>
+                                        Đăng nhập
+                                    </Link>
+                                </div>
+                                <div className='right-item'>
+                                    <Link to='register'>
+                                        Đăng ký
+                                    </Link>
+                                </div>
+                            </> :
+                            <>
+                                <div className='right-item'>
+                                    <div>
+                                        {userInfo && userInfo.fullname}
+                                    </div>
+                                </div>
+                                <div className='right-item'>
+                                    <div className='log-out' onClick={() => processLogout()}>
+                                        Log out
+                                    </div>
+                                </div>
+                            </>
+                        }
                     </div>
                 </div>
             </div>
@@ -46,6 +64,11 @@ export default function Header() {
                 <div className='item'>
                     <NavLink to={path.HOME}>
                         Trang chủ
+                    </NavLink>
+                </div>
+                <div className='item'>
+                    <NavLink to={path.SCHEDULES}>
+                        Lịch chiếu
                     </NavLink>
                 </div>
                 <div className='item'>
@@ -67,3 +90,14 @@ export default function Header() {
         </div>
     )
 }
+
+const mapStateToProps = state => ({
+    isLoggedIn: state.user.isLoggedIn,
+    userInfo: state.user.userInfo
+})
+
+const mapActionsToProps = {
+    processLogout
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Header)

@@ -16,7 +16,7 @@ function AdminSidebar() {
                 </div>
             </NavLink>
             <div onClick={() => {
-                subItem === 2 ? setSubItem(0) : setSubItem(2)
+                subItem === 1 ? setSubItem(0) : setSubItem(1)
             }} className="item">
                 <div>
                     <i className="fa-solid fa-film"></i>
@@ -24,7 +24,7 @@ function AdminSidebar() {
                 </div>
                 <i className="fa-solid fa-angle-down"></i>
             </div>
-            {subItem === 2 &&
+            {subItem === 1 &&
                 <div className="sub-item">
                     <NavLink className="link" to={path.CREATE_MOVIE}>
                         <div className="feature">
@@ -41,7 +41,7 @@ function AdminSidebar() {
                 </div>
             }
             <div onClick={() => {
-                subItem === 3 ? setSubItem(0) : setSubItem(3)
+                subItem === 2 ? setSubItem(0) : setSubItem(2)
             }} className="item">
                 <div>
                     <i className="fa-solid fa-tv"></i>
@@ -49,7 +49,7 @@ function AdminSidebar() {
                 </div>
                 <i className="fa-solid fa-angle-down"></i>
             </div>
-            {subItem === 3 &&
+            {subItem === 2 &&
                 <div className="sub-item">
                     <NavLink className="link" to={path.CREATE_CINEMA}>
                         <div className="feature">
@@ -66,7 +66,7 @@ function AdminSidebar() {
                 </div>
             }
             <div onClick={() => {
-                subItem === 1 ? setSubItem(0) : setSubItem(1)
+                subItem === 3 ? setSubItem(0) : setSubItem(3)
             }} className="item">
                 <div>
                     <i className="fa-regular fa-user"></i>
@@ -74,7 +74,7 @@ function AdminSidebar() {
                 </div>
                 <i className="fa-solid fa-angle-down"></i>
             </div>
-            {subItem === 1 &&
+            {subItem === 3 &&
                 <div className="sub-item">
                     <NavLink className="link" to={path.CREATE_ACCOUNT}>
                         <div className="feature">
@@ -86,6 +86,31 @@ function AdminSidebar() {
                         <div className="feature">
                             <i className="fa-regular fa-circle"></i>
                             Danh sách tài khoản
+                        </div>
+                    </NavLink>
+                </div>
+            }
+            <div onClick={() => {
+                subItem === 4 ? setSubItem(0) : setSubItem(4)
+            }} className="item">
+                <div>
+                    <i className="fa-regular fa-calendar"></i>
+                    Schedules
+                </div>
+                <i className="fa-solid fa-angle-down"></i>
+            </div>
+            {subItem === 4 &&
+                <div className="sub-item">
+                    <NavLink className="link" to={path.CREATE_SCHEDULE}>
+                        <div className="feature">
+                            <i className="fa-regular fa-circle"></i>
+                            Thêm lịch chiếu
+                        </div>
+                    </NavLink>
+                    <NavLink className="link" to={path.READ_SCHEDULE}>
+                        <div className="feature">
+                            <i className="fa-regular fa-circle"></i>
+                            Danh sách lịch chiếu
                         </div>
                     </NavLink>
                 </div>

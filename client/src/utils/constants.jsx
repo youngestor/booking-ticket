@@ -17,9 +17,14 @@ export const path = {
     READ_ACCOUNT: 'account/read',
     UPDATE_ACCOUNT: 'account/update',
 
+    CREATE_SCHEDULE: 'schedule/create',
+    READ_SCHEDULE: 'schedule/read',
+    UPDATE_SCHEDULE: 'schedule/update',
+
     MOVIES: 'movies',
     CINEMAS: 'cinemas',
     ACCOUNTS: 'accounts',
+    SCHEDULES: 'schedules',
     INTRO: 'intro',
     CONTACT: 'contact',
 

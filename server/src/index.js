@@ -7,6 +7,7 @@ const connectDB = require('./config/mongoose')
 const movieRoutes = require('./routes/movieRoutes')
 const cinemaRoutes = require('./routes/cinemaRoutes')
 const userRoutes = require('./routes/userRoutes')
+const scheduleRoutes = require('./routes/scheduleRoutes')
 
 const app = express()
 const PORT = 7000
@@ -25,5 +26,6 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 5
 movieRoutes(app)
 cinemaRoutes(app)
 userRoutes(app)
+scheduleRoutes(app)
 
 app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`))

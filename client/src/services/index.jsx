@@ -2,3 +2,4 @@
 export * from './movies'
 export * from './cinemas'
 export * from './accounts'
+export * from './schedules'

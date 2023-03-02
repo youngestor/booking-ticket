@@ -8,17 +8,29 @@ const handleRead = (req, res, next) => {
         .catch(next)
 }
 
-const handleCreate = (req, res, next) => {
-    const area = req.body.area
-    const name = req.body.name
-    const location = req.body.location
-    const image = req.files.file.name
-    if (!area || !image || !location || !name)
+const handleSearch = (req, res, next) => {
+    const _id = req.body._id
+    if (!_id)
         return res.status(500).json({
             errMessage: 'Please enter full information!'
         })
 
-    const cinemaNew = new Cinema({ area, image, name, location })
+    Cinema.find({ _id })
+        .then(cinema => res.status(200).json({
+            cinema
+        }))
+        .catch(next)
+}
+
+const handleCreate = (req, res, next) => {
+    const location = req.body.location
+    const image = req.files.file.name
+    if (!image || !location)
+        return res.status(500).json({
+            errMessage: 'Please enter full information!'
+        })
+
+    const cinemaNew = new Cinema({ image, location })
     cinemaNew.save()
         .then(() => {
             req.files.file.mv("./src/uploads/" + image)
@@ -36,12 +48,9 @@ const handleUpdate = (req, res, next) => {
             errMessage: 'Please enter full information!'
         })
 
-
-    const area = req.body.area
-    const name = req.body.name
     const location = req.body.location
     const image = req.files.file.name
-    Cinema.updateOne({ _id }, { area, image, location, name })
+    Cinema.updateOne({ _id }, { image, location })
         .then(cinema => {
             req.files.file.mv("./src/uploads/" + image)
             res.status(200).json({
@@ -65,4 +74,4 @@ const handleDelete = (req, res, next) => {
         .catch(next)
 }
 
-module.exports = { handleRead, handleCreate, handleUpdate, handleDelete }
+module.exports = { handleRead, handleSearch, handleCreate, handleUpdate, handleDelete }
