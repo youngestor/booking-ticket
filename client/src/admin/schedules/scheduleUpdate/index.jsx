@@ -10,7 +10,7 @@ function ScheduleUpdate() {
     const [movies, setMovies] = useState([])
 
     const location = useLocation()
-    const cinema = location.state
+    const schedule = location.state
 
     let navigate = useNavigate()
 
@@ -19,14 +19,14 @@ function ScheduleUpdate() {
     }, [])
 
     const fetchData = async () => {
-        let resCinemas = await apiCinemaRead()
-        let resMovies = await apiMovieRead()
+        const resCinemas = await apiCinemaRead()
+        const resMovies = await apiMovieRead()
         setCinemas(resCinemas.data.cinema)
         setMovies(resMovies.data.movie)
     }
 
     const onSubmit = async data => {
-        data._id = cinema._id
+        data._id = schedule._id
         await apiScheduleUpdate(data)
         alert('Update success')
         return navigate(`${path.ADMIN}/${path.READ_SCHEDULE}`)
@@ -39,17 +39,35 @@ function ScheduleUpdate() {
                 </div>
                 <div className='form-control'>
                     <span>Tên phim</span>
-                    <select {...register('movie', { required: true })}>
+                    <select  {...register('movie.title', { required: true })}>
                         {movies && movies.map(item =>
-                            <option key={item._id} value={item._id}>{item.title}</option>
+                            <option key={item._id} value={item.title}>
+                                {item.title}
+                            </option>
+                        )}
+                    </select>
+                    <select {...register('movie.image', { required: true })}>
+                        {movies && movies.map(item =>
+                            <option key={item._id} value={item.image}>
+                                {item.title}
+                            </option>
                         )}
                     </select>
                 </div>
                 <div className='form-control'>
                     <span>Vị trí</span>
-                    <select {...register('cinema', { required: true })}>
+                    <select {...register('cinema.location', { required: true })}>
                         {cinemas && cinemas.map(item =>
-                            <option key={item._id} value={item._id}>{item.location}</option>
+                            <option key={item._id} value={item.location} >
+                                {item.location}
+                            </option>
+                        )}
+                    </select>
+                    <select {...register('cinema.image', { required: true })}>
+                        {cinemas && cinemas.map(item =>
+                            <option key={item._id} value={item.image} >
+                                {item.location}
+                            </option>
                         )}
                     </select>
                 </div>

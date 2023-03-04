@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import moment from 'moment'
 import { path } from '../../../utils'
 import { apiScheduleRead, apiScheduleDelete } from '../../../services'
 
@@ -11,8 +12,11 @@ function ScheduleRead() {
     }, [])
 
     const fetchData = async () => {
-        let res = await apiScheduleRead()
-        setSchedules(res.data.schedule)
+        const res = await apiScheduleRead()
+        const data = res.data.schedule
+        data.map(item => item.datetime
+            = moment(item.datetime).format('MM/DD/YYYY h:mm A'))
+        setSchedules(data)
     }
 
     const deleteSchedule = async id => {
@@ -31,6 +35,12 @@ function ScheduleRead() {
                 <div className='list-movies'>
                     {schedules && schedules.map(item =>
                         <div key={item._id} className='item'>
+                            <div className='film'>
+                                {item.movie.title}
+                            </div>
+                            <div className='film'>
+                                {item.cinema.location}
+                            </div>
                             <div className='film'>
                                 {item.datetime}
                             </div>

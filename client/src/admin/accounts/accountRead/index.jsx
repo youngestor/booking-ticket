@@ -11,7 +11,7 @@ function AccountRead() {
     }, [])
 
     const fetchData = async () => {
-        let res = await apiAccountRead()
+        const res = await apiAccountRead()
         setUsers(res.data.user)
     }
 

@@ -10,7 +10,7 @@ function Cinemas() {
     }, [])
 
     const fetchData = async () => {
-        let res = await apiCinemaRead()
+        const res = await apiCinemaRead()
         setCinemas(res.data.cinema)
     }
 

@@ -3,8 +3,14 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const Schedule = new Schema({
-    movie: String,
-    cinema: String,
+    movie: {
+        title: String,
+        image: String
+    },
+    cinema: {
+        location: String,
+        image: String
+    },
     datetime: String,
     number: String,
 }, {

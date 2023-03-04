@@ -23,9 +23,11 @@ import AdminScheduleUpdate from '../admin/schedules/scheduleUpdate'
 
 import Layouts from './layouts'
 import Home from './home'
+import Schedules from './schedules'
 import Movies from './movies'
 import Cinemas from './cinemas'
 import Intro from './intro'
+
 import Login from './login'
 import Register from './register'
 
@@ -41,6 +43,7 @@ export default function App() {
                         <Route path={path.REGISTER} element={<Register />} />
 
                         <Route index element={<Home />} />
+                        <Route path={path.SCHEDULES} element={<Schedules />} />
                         <Route path={path.MOVIES} element={<Movies />} />
                         <Route path={path.CINEMAS} element={<Cinemas />} />
                         <Route path={path.INTRO} element={<Intro />} />

@@ -11,7 +11,7 @@ function MovieRead() {
     }, [])
 
     const fetchData = async () => {
-        let res = await apiMovieRead()
+        const res = await apiMovieRead()
         setMovies(res.data.movie)
     }
 
