@@ -1,0 +1,40 @@
+.list-schedules-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+
+    .item-card {
+        flex: 25%;
+        max-width: 25%;
+
+        .item {
+            margin: 10px;
+            border: 1px solid #dedede;
+
+            .row {
+                display: flex;
+                justify-content: space-between;
+                margin: 16px;
+                font-size: 14px;
+
+                h5 {
+                    text-transform: uppercase;
+                }
+            }
+
+            .feature {
+                text-align: center;
+                margin-bottom: 10px;
+
+                a {
+                    text-decoration: none;
+                    color: #a88300;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

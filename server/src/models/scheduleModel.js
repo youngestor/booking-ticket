@@ -13,6 +13,7 @@ const Schedule = new Schema({
     },
     datetime: String,
     number: String,
+    remaining: String,
 }, {
     timestamps: true
 })

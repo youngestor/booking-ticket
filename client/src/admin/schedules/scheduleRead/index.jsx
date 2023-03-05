@@ -45,7 +45,7 @@ function ScheduleRead() {
                                 {item.datetime}
                             </div>
                             <div className='film'>
-                                {item.number}
+                                {item.remaining}/{item.number}
                             </div>
                             <div className='feature'>
                                 <Link to={`${path.ADMIN}/${path.UPDATE_SCHEDULE}`} state={item}>

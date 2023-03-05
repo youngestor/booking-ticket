@@ -18,7 +18,9 @@ const handleCreate = (req, res, next) => {
             errMessage: 'Please enter full information!'
         })
 
-    const scheduleNew = new Schedule({ movie, cinema, datetime, number })
+    const remaining = number
+
+    const scheduleNew = new Schedule({ movie, cinema, datetime, number, remaining })
     scheduleNew.save()
         .then(() => {
             res.status(200).json({
