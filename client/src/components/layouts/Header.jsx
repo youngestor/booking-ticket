@@ -68,7 +68,7 @@ function Header({ processLogout, isLoggedIn, userInfo }) {
                 </div>
                 <div className='item'>
                     <NavLink to={path.SCHEDULES}>
-                        Lịch chiếu
+                        Mua vé
                     </NavLink>
                 </div>
                 <div className='item'>

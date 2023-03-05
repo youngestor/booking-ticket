@@ -19,6 +19,8 @@ function ScheduleCreate() {
     }
 
     const onSubmit = async (data, e) => {
+        data.movie = JSON.parse(data.movie)
+        data.cinema = JSON.parse(data.cinema)
         await apiScheduleCreate(data)
         alert('Create success')
         e.target.reset()
@@ -32,16 +34,9 @@ function ScheduleCreate() {
                 </div>
                 <div className='form-control'>
                     <span>Tên phim</span>
-                    <select {...register('movie.title', { required: true })}>
+                    <select {...register('movie', { required: true })}>
                         {movies && movies.map(item =>
-                            <option key={item._id} value={item.title}>
-                                {item.title}
-                            </option>
-                        )}
-                    </select>
-                    <select {...register('movie.image', { required: true })}>
-                        {movies && movies.map(item =>
-                            <option key={item._id} value={item.image}>
+                            <option key={item._id} value={JSON.stringify(item)}>
                                 {item.title}
                             </option>
                         )}
@@ -49,16 +44,9 @@ function ScheduleCreate() {
                 </div>
                 <div className='form-control'>
                     <span>Vị trí</span>
-                    <select {...register('cinema.location', { required: true })}>
+                    <select {...register('cinema', { required: true })}>
                         {cinemas && cinemas.map(item =>
-                            <option key={item._id} value={item.location} >
-                                {item.location}
-                            </option>
-                        )}
-                    </select>
-                    <select {...register('cinema.image', { required: true })}>
-                        {cinemas && cinemas.map(item =>
-                            <option key={item._id} value={item.image} >
+                            <option key={item._id} value={JSON.stringify(item)} >
                                 {item.location}
                             </option>
                         )}
@@ -70,7 +58,7 @@ function ScheduleCreate() {
                 </div>
                 <div className='form-control'>
                     <span>Số lượng</span>
-                    <input defaultValue='100' {...register('number', { required: true })} type='number' />
+                    <input {...register('number', { required: true })} type='number' />
                 </div>
                 <button type='submit'>
                     Thêm

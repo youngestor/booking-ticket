@@ -4,8 +4,8 @@
     margin: 0 -16px;
 
     .item-card {
-        flex: 50%;
-        max-width: 50%;
+        flex: 33.33%;
+        max-width: 33.33%;
 
         .item {
             margin: 16px;
@@ -14,7 +14,8 @@
             img {
                 display: block;
                 width: 100%;
-                height: auto;
+                height: 68px;
+                object-fit: contain;
             }
 
             .title {

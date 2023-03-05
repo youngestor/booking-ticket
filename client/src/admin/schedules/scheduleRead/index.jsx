@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import moment from 'moment'
 import { path } from '../../../utils'
 import { apiScheduleRead, apiScheduleDelete } from '../../../services'
 
@@ -14,8 +13,6 @@ function ScheduleRead() {
     const fetchData = async () => {
         const res = await apiScheduleRead()
         const data = res.data.schedule
-        data.map(item => item.datetime
-            = moment(item.datetime).format('MM/DD/YYYY h:mm A'))
         setSchedules(data)
     }
 
