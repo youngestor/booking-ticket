@@ -8,20 +8,6 @@ const handleRead = (req, res, next) => {
         .catch(next)
 }
 
-const handleSearch = (req, res, next) => {
-    const _id = req.body._id
-    if (!_id)
-        return res.status(500).json({
-            errMessage: 'Please enter full information!'
-        })
-
-    Cinema.find({ _id })
-        .then(cinema => res.status(200).json({
-            cinema
-        }))
-        .catch(next)
-}
-
 const handleCreate = (req, res, next) => {
     const location = req.body.location
     const image = req.files.file.name
@@ -74,4 +60,4 @@ const handleDelete = (req, res, next) => {
         .catch(next)
 }
 
-module.exports = { handleRead, handleSearch, handleCreate, handleUpdate, handleDelete }
+module.exports = { handleRead, handleCreate, handleUpdate, handleDelete }

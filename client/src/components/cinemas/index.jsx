@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { URL } from '../../utils'
+import { Link } from 'react-router-dom'
+import { path, URL } from '../../utils'
 import { apiCinemaRead } from '../../services'
 
 function Cinemas() {
@@ -24,7 +25,7 @@ function Cinemas() {
                             {item.location}
                         </div>
                         <div className="feature">
-                            <a href="/">Xem thêm</a>
+                            <Link to={`/${path.CINEMAS}/${item._id}`} state={item._id}>Xem thêm</Link>
                         </div>
                     </div>
                 </div>)

@@ -64,4 +64,32 @@ const handleDelete = (req, res, next) => {
         .catch(next)
 }
 
-module.exports = { handleRead, handleCreate, handleUpdate, handleDelete }
+const handleSearchMovie = (req, res, next) => {
+    const _id = req.query._id
+    if (!_id)
+        return res.status(500).json({
+            errMessage: 'Please enter full information!'
+        })
+
+    Schedule.find({ 'movie._id': _id })
+        .then(schedules => res.status(200).json({
+            schedules
+        }))
+        .catch(next)
+}
+
+const handleSearchCinema = (req, res, next) => {
+    const _id = req.query._id
+    if (!_id)
+        return res.status(500).json({
+            errMessage: 'Please enter full information!'
+        })
+
+    Schedule.find({ 'cinema._id': _id })
+        .then(schedules => res.status(200).json({
+            schedules
+        }))
+        .catch(next)
+}
+
+module.exports = { handleRead, handleCreate, handleUpdate, handleDelete, handleSearchMovie, handleSearchCinema }

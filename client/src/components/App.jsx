@@ -25,7 +25,9 @@ import Layouts from './layouts'
 import Home from './home'
 import Schedules from './schedules'
 import Movies from './movies'
+import MoviesDetail from './moviesDetail'
 import Cinemas from './cinemas'
+import CinemasDetail from './cinemasDetail'
 import Intro from './intro'
 
 import Login from './login'
@@ -45,7 +47,9 @@ export default function App() {
                         <Route index element={<Home />} />
                         <Route path={path.SCHEDULES} element={<Schedules />} />
                         <Route path={path.MOVIES} element={<Movies />} />
+                        <Route path={path.MOVIES + '/:id'} element={<MoviesDetail />} />
                         <Route path={path.CINEMAS} element={<Cinemas />} />
+                        <Route path={path.CINEMAS + '/:id'} element={<CinemasDetail />} />
                         <Route path={path.INTRO} element={<Intro />} />
 
                         <Route path={path.ALL} element={<Error />} />

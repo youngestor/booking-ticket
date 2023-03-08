@@ -11,3 +11,9 @@ export const apiScheduleUpdate = data =>
 
 export const apiScheduleDelete = id =>
     axiosClient.post('/api/schedule/delete', { _id: id })
+
+export const apiScheduleSearchMovies = id =>
+    axiosClient.get('/api/schedule/search/movie?_id=' + id)
+
+export const apiScheduleSearchCinemas = id =>
+    axiosClient.get('/api/schedule/search/cinema?_id=' + id)

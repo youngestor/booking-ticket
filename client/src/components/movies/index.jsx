@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { URL } from '../../utils'
+import { Link } from 'react-router-dom'
+import { path, URL } from '../../utils'
 import { apiMovieRead } from '../../services'
 
 function Movies() {
@@ -23,7 +24,7 @@ function Movies() {
                             <img src={`${URL.SERVER}/${item.image}`} alt="" />
                             <div className="coating">
                                 <div className="feature">
-                                    <a href="/">Xem thêm</a>
+                                    <Link to={`/${path.MOVIES}/${item._id}`} state={item._id}>Xem thêm</Link>
                                 </div>
                             </div>
                         </div>
