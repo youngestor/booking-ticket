@@ -28,8 +28,8 @@ export const path = {
     INTRO: 'intro',
     CONTACT: 'contact',
 
-    LOGIN: 'login',
-    REGISTER: 'register'
+    LOGIN: '/login',
+    REGISTER: '/register'
 }
 
 export const URL = {

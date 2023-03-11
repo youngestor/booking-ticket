@@ -45,24 +45,19 @@
                 margin-left: 8px;
             }
 
-            img {
-                width: 36px;
-                height: auto;
-                border-radius: 50%;
-            }
-
             i {
-                margin-left: 4px;
+                margin-left: 16px;
             }
         }
 
         .user-action {
             position: absolute;
             right: 0;
-            top: 120%;
-            width: 100%;
+            top: 140%;
             background: #fff;
             border: 2px solid #eaedf1;
+            width: 160%;
+            text-align: center;
 
             &::after {
                 content: "";
@@ -70,7 +65,7 @@
                 height: 13px;
                 background: #fff;
                 position: absolute;
-                top: -7px;
+                top: -9px;
                 right: 20px;
                 transform: rotate(45deg);
                 border-top: 2px solid #eaedf1;

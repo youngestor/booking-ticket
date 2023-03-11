@@ -14,7 +14,7 @@ function Login({ loginSuccess }) {
         if (user && user.data.errCode === 0)
             loginSuccess(user.data.user)
         alert('Login success')
-        return navigate(-1)
+        navigate(-1)
     }
 
     return (

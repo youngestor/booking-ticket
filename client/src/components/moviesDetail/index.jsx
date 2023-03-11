@@ -23,7 +23,7 @@ function MoviesDetail() {
 
     return (
         <div className="list-schedules-wrapper">
-            {schedules && schedules.map(item =>
+            {schedules && schedules.length > 0 ? schedules.map(item =>
                 <div key={item._id} className="item-card">
                     <div className="item">
                         <div className="row">
@@ -54,7 +54,8 @@ function MoviesDetail() {
                             <a href="/">Đặt vé</a>
                         </div>
                     </div>
-                </div>)
+                </div>) :
+                <div className='exist'>Hiện tại chưa có xuất chiếu</div>
             }
         </div>
     );

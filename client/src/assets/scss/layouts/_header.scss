@@ -45,8 +45,33 @@
                 align-items: center;
 
                 .right-item {
-                    padding: 6px 0 6px 20px;
-                    font-size: 12px;
+                    padding: 6px 0 6px 36px;
+                    position: relative;
+                    user-select: none;
+                    cursor: pointer;
+                    font-size: 14px;
+                    line-height: 24px;
+                    font-weight: bold;
+
+                    .user-action {
+                        position: absolute;
+                        background: #efebdb;
+                        left: 36px;
+                        top: 110%;
+                        width: 160%;
+                        text-align: center;
+                        border: 1px solid #cdc197;
+
+                        .item {
+                            font-size: 14px;
+                            line-height: 24px;
+                            font-weight: bold;
+
+                            &:hover {
+                                color: #a88300;
+                            }
+                        }
+                    }
 
                     a {
                         text-decoration: none;

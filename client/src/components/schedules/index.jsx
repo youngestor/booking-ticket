@@ -13,7 +13,7 @@ function Schedules() {
         const res = await apiScheduleRead()
         const data = res.data.schedule
         data.map(item => item.datetime
-            = moment(item.datetime).format('MM/DD/YYYY h:mm A'))
+            = moment(item.datetime).format('DD/MM/YYYY h:mm A'))
         setSchedules(data)
     }
 

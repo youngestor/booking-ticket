@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logoHeader } from '../../assets/img'
@@ -6,6 +6,8 @@ import { path } from '../../utils'
 import { processLogout } from '../../redux/actions'
 
 function Header({ processLogout, isLoggedIn, userInfo }) {
+    const [user, setUser] = useState(false)
+
     return (
         <div className='header'>
             <div className='header-top'>
@@ -41,13 +43,21 @@ function Header({ processLogout, isLoggedIn, userInfo }) {
                             </> :
                             <>
                                 <div className='right-item'>
-                                    <div>
+                                    <div onClick={() => setUser(!user)}>
                                         {userInfo && userInfo.fullname}
                                     </div>
+                                    {user &&
+                                        <div className='user-action'>
+                                            {userInfo && userInfo.username === 'admin' &&
+                                                <Link to={path.ADMIN} className='item'>Quản lý</Link>
+                                            }
+                                            <div className='item'>Vỏ hàng</div>
+                                        </div>
+                                    }
                                 </div>
                                 <div className='right-item'>
                                     <div className='log-out' onClick={() => processLogout()}>
-                                        Log out
+                                        Đăng xuất
                                     </div>
                                 </div>
                             </>
