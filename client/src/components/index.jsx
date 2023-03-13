@@ -11,6 +11,7 @@ import MoviesDetail from './moviesDetail'
 import Cinemas from './cinemas'
 import CinemasDetail from './cinemasDetail'
 import Intro from './intro'
+import Cart from './cart'
 
 import Login from './login'
 import Register from './register'
@@ -33,6 +34,8 @@ function Page({ isLoggedIn }) {
                 <Route path={path.CINEMAS} element={<Cinemas />} />
                 <Route path={path.CINEMAS + '/:id'} element={<CinemasDetail />} />
                 <Route path={path.INTRO} element={<Intro />} />
+                <Route path={path.CART} element={isLoggedIn ?
+                    <Cart /> : <Navigate to={path.LOGIN} />} />
 
                 <Route path={path.ALL} element={<Error />} />
             </Routes>

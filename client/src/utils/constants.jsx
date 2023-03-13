@@ -26,7 +26,7 @@ export const path = {
     ACCOUNTS: 'accounts',
     SCHEDULES: 'schedules',
     INTRO: 'intro',
-    CONTACT: 'contact',
+    CART: 'cart',
 
     LOGIN: '/login',
     REGISTER: '/register'

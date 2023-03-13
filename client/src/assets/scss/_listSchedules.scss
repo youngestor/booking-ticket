@@ -26,12 +26,13 @@
                 text-align: center;
                 margin-bottom: 10px;
 
-                a {
+                .cart {
                     text-decoration: none;
                     color: #a88300;
 
                     &:hover {
                         color: black;
+                        cursor: pointer;
                     }
                 }
             }

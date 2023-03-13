@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
+import { connect } from 'react-redux'
+import { addCart } from '../../redux/actions'
 import { apiScheduleRead } from '../../services'
 
-function Schedules() {
+function Schedules({ addCart }) {
     const [schedules, setSchedules] = useState([])
 
     useEffect(() => {
@@ -47,7 +49,10 @@ function Schedules() {
                             </h5>
                         </div>
                         <div className="feature">
-                            <a href="/">Đặt vé</a>
+                            <div onClick={() => {
+                                addCart(item)
+                                alert('Đã thêm vé vào giỏ hàng!')
+                            }} className='cart'>Thêm</div>
                         </div>
                     </div>
                 </div>)
@@ -56,4 +61,10 @@ function Schedules() {
     );
 }
 
-export default Schedules;
+const mapStateToProps = () => ({})
+
+const mapActionsToProps = {
+    addCart
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Schedules)

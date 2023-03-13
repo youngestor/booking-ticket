@@ -51,7 +51,9 @@ function Header({ processLogout, isLoggedIn, userInfo }) {
                                             {userInfo && userInfo.username === 'admin' &&
                                                 <Link to={path.ADMIN} className='item'>Quản lý</Link>
                                             }
-                                            <div className='item'>Vỏ hàng</div>
+                                            <div className='item'>
+                                                <Link to={path.CART}>Vỏ hàng</Link>
+                                            </div>
                                         </div>
                                     }
                                 </div>

@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { logoAdminHeader } from '../../assets/img/admin'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { path } from '../../utils'
+import { logoAdminHeader } from '../../assets/img/admin'
 import { processLogout } from '../../redux/actions'
 
 function AdminHeader({ processLogout, userInfo }) {
@@ -20,6 +22,12 @@ function AdminHeader({ processLogout, userInfo }) {
                 {user &&
                     <div className='user-action'>
                         <div className='name'>{userInfo && userInfo.username}</div>
+                        <div className='item'>
+                            <Link to={path.HOME}>
+                                <i className="fa-solid fa-house"></i>
+                                Home
+                            </Link>
+                        </div>
                         <div className='item' onClick={() => processLogout()}>
                             <i className="fa-solid fa-arrow-right-from-bracket"></i>
                             Sign Out
